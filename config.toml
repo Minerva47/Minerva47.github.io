@@ -1,0 +1,8 @@
+baseURL = "https://minerva47.github.io/"
+languageCode = "en-us"
+title = "My Blog"
+theme = "crisp"
+disqus = "Minerva"
+
+
+

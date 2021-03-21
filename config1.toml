@@ -1,0 +1,6 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "My Blog"
+#theme = "ananke"
+disqus = "Minerva47"
+
