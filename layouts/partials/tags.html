@@ -1,4 +1,13 @@
-<h6 class="sitetaglisttitle">Tags</h6>
+<!-- <h6 class="sitetaglisttitle">Tags</h6>
+<ul class="sitetaglist">
+    {{ range first 10 .Site.Taxonomies.tags.ByCount }}
+        {{ if ge .Count 1 }}
+            <li><a href="/tags/{{ .Name | urlize }}">{{ .Name }} ({{ .Count }})</a></li>
+        {{ end }}
+    {{ end }}
+</ul> -->
+<h6 class="sitetaglisttitle">Respective efforts,</h6>
+<h6 class="sitetaglisttitle">peak bye.</h6>
 <ul class="sitetaglist">
     {{ range first 10 .Site.Taxonomies.tags.ByCount }}
         {{ if ge .Count 1 }}

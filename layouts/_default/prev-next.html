@@ -4,7 +4,7 @@
 <ul >
     {{ if .PrevInSection }}
         <li>
-        <font size="5" color="abbccc"><b>next:</b></font>
+        <font size="5" color="blue"><b>next:</b></font>
         <a href="{{ .PrevInSection.Permalink }}"
                 class="button big previous">{{ .PrevInSection.Title }}</a></li>
     {{ end }}
@@ -12,7 +12,7 @@
     
     {{ if .NextInSection }}   
         <li>
-        <font size="5" color="abbccc"><b>prev:</b></font>
+        <font size="5" color=""><b>prev:</b></font>
         <a href="{{ .NextInSection.Permalink }}"
                 class="button big next">{{ .NextInSection.Title }}</a></li>
     {{ end }}

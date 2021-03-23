@@ -8,9 +8,9 @@
 body,html
 {
 	font-size: 1em;
-	line-height: 1.6em;
+	line-height: 1.65em;
     font-family:"Open Sans",sans-serif;
-    font-weight:300;color:rgb(21, 25, 29)
+    font-weight:300;color:#444
 	background-color: #ecf0f1;
 }
 
@@ -26,15 +26,15 @@ body
 
 header
 {
-	border-right:1px rgb(212, 216, 226) solid;
-	padding: 2em;/*左侧栏宽度*/
+	border-right:1px #eee solid;
+	padding: 2em;
 	position: fixed;
 	top: 0;
 	left: 0;
 	height: 100%;
 	width: 13.5em;
-	background-color: #314961;/*侧边栏背景色*/
-	color: #abbccc;/*tag 颜色*/
+	background-color: #2c3e50;
+	color: #ecf0f1;
 }
 
 #content
@@ -45,51 +45,51 @@ header
 
 footer
 {
-	padding: 0 0 0.5em;
-	font-size: .9em;
-	line-height: 2em;
-	color: #314961;/*Minerva47‘s Blog的颜色*/
+	padding: 1em 0 2.5em;
+	font-size: .8em;
+	line-height: 1.5em;
+	color: #95a5a6;
 }
 
 article
 {
-	border-bottom: .1em #abbccc solid;/*prev：摸鱼日记等下划线颜色,下划线的宽度*/
-	padding-bottom: .8em;/*next some content 下线的距离*/
+	border-bottom: .1em #bdc3c7 solid;
+	padding-bottom: 1.7em;
 	max-width: 56em;
 }
 
 h4,h5,h6,hr,p
 {
-	margin-top: .8em;
-	margin-bottom: .8em;/*prev:摸鱼笔记上划线距离*/
+	margin-top: .9em;
+	margin-bottom: .9em;
 }
 
 h1,h2,h3,h4,h5,h6
 {
 	font-family:"Bree Serif",serif;
-    font-weight:550!important
+    font-weight:400!important
 }
 
 h1
 {
-	font-size: 3em;/*moyuriji*/
-	line-height: 1.5em;
-	margin-top: 1.5em;
-	margin-bottom: 1.5em;
+	font-size: 2.5em;
+	line-height: 1.1em;
+	margin-top: .6em;
+	margin-bottom: .6em;
 }
 
 h2
 {
-	font-size: 2em;
+	font-size: 1.9em;
 	line-height: 1.2em;
-	margin-top: 1.3em;
-	margin-bottom: 1.3em;
+	margin-top: .7em;
+	margin-bottom: .7em;
 }
 
-h3/*正经人*/
+h3
 {
-	font-size: 1.5em;
-	line-height: 1.2em;
+	font-size: 1.4em;
+	line-height: 1.3em;
 	margin-top: .8em;
 	margin-bottom: .8em;
 }
@@ -106,9 +106,7 @@ h5
 
 h6
 {
-	margin-top: .8em;
-	margin-bottom: .8em;
-	font-size: 1.4em;/*links tags size*/
+	font-size: 1.1em;
 }
 
 iframe,img
@@ -118,10 +116,9 @@ iframe,img
 
 a
 {
-	font-weight: 00;
+	font-weight: 700;
 	text-decoration: none;
-	font-size: 1.2em;
-	color: #2f5b8d;//blog标题颜色
+	color: #e74c3c;
 }
 
 a:hover
@@ -131,7 +128,7 @@ a:hover
 
 h1 a,h2 a,h3 a,h4 a,h5 a,h6 a
 {
-	font-weight: 600;
+	font-weight: 400;
 }
 
 strong
@@ -141,7 +138,7 @@ strong
 
 blockquote
 {
-	border-left: .4em solid #ec0eaa;
+	border-left: .4em solid #bdc3c7;
 	padding-left: 1.2em;
 	font-size: 1.3em;
 }
@@ -150,28 +147,26 @@ hr
 {
 	border: 0;
 	height: 1px;
-	background: #abbccc;
+	background: #bdc3c7;
 }
 
-ol,ul/*链接距离左侧开头的距离*/
+ol,ul
 {
-	margin-left: 2.5em;
+	margin-left: 3em;
 }
 
-code/*代码引用颜色*/
+code
 {
-	font-size: 1.4em;
-	font-weight: 100;
-	flex-wrap: wrap-reverse;
-	background: #f1f1f1;
+	font-size: 1.2em;
+	background: #bdc3c7;
 }
 
 pre
 {
-	font-size: .9em;
-	line-height: 1.5em;
-	background: #c2c4d3;/*代码块边缘颜色*/
-	padding: -.1em;
+	font-size: .8em;
+	line-height: 2em;
+	background: #bdc3c7;
+	padding: 1em;
 	word-break: break-all;
 	word-wrap: break-word;
 	white-space: pre;
@@ -181,20 +176,20 @@ pre
 
 input
 {
-	font-size: .1em;
+	font-size: 1em;
 	padding: .3em;
 }
 
 header h1
 {
-	font-size: 2.5em;
-	margin-top: .5em;
+	font-size: 1.9em;
+	margin-top: .8em;
 	margin-bottom: .6em;
 }
 
 header a
 {
-	color: #abbccc;//左侧边栏MyBlog字色
+	color: #1abc9c;
 }
 
 header h1 a:hover
@@ -214,15 +209,15 @@ header #logo img
 
 #follow-icons
 {
-	font-size: .7em;/*github图标大小*/
+	font-size: .7em;
 	margin-top: -.7em;
 	margin-bottom: 1.5em;
 }
 
 #follow-icons a
 {
-	color: rgb(204, 204, 204);
-	margin-right: .5em;/*github图标间隔*/
+	color: #ccc;
+	margin-right: 0.5em;
 }
 
 #follow-icons span
@@ -240,12 +235,12 @@ header #logo img
 
 header h6
 {
-	margin-top: .5em;/*Links距离*/
+	margin-top: .5em;
 }
 
 article span.post-stamp
 {
-	color: rgb(136, 136, 136);
+	color: #888;
 }
 
 h1.post-title
@@ -254,18 +249,18 @@ h1.post-title
 	margin-bottom: .6em;
 }
 
-h3.post-title/*blog标题与线的距离*/
+h3.post-title
 {
-	margin-top: -.4em;
-	padding-bottom: .5em;
-	border-bottom: 1px solid #abbccc;
-	font-size: 1.5em;
-	color: #3883cf;/*日期颜色*/
+	margin-top: .4em;
+	padding-bottom: .9em;
+	border-bottom: 1px solid #bdc3c7;
+	font-size: 1.2em;
+	color: #34495e;
 	font-family: "Open Sans",sans-serif;
 	"Open Sans"-weight: 700!important;
 }
 
-.sitetaglist/*searching module*/
+.sitetaglist
 {
 	list-style-type: none;
 	display: block;
@@ -288,8 +283,8 @@ h3.post-title/*blog标题与线的距离*/
 h3.post-title>time
 {
 	font-family: "Open Sans",sans-serif;
-	font-weight: 400!important;/* 日期的粗细 */
-	font-size: 1em;
+	font-weight: 300!important;
+	font-size: .9em;
 }
 
 .post-title .feature-star
@@ -305,14 +300,14 @@ h3.post-title>time
 .taglist { color: #ccc }
 
 .taglist a {
-    background-color: rgb(23, 172, 9);
-    color: rgb(38, 172, 78);
+    background-color: #ccc;
+    color: #fff;
     display: inline-block;
     line-height: 1.5em;
     padding: .3em .6em;
     vertical-align: 20%;
     font-size: .5em;
-    font-weight: 00!important;
+    font-weight: 700!important;
     text-transform: uppercase;
     letter-spacing: .05em;
     border-radius: .25em;
@@ -335,13 +330,13 @@ h3.post-title>time
 footer a
 {
 	font-weight: 300;
-	color: #387392;/*Hugo,Crisp及下划线的颜色*/
+	color: #95a5a6;
 	text-decoration: underline;
 }
 
 footer a:hover
 {
-	color: #95a0a6;
+	color: #7f8c8d;
 	text-decoration: none;
 }
 
@@ -358,12 +353,12 @@ footer a:hover
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 1.8em;
-	line-height: 1.87em;
+	width: 1.87em;
+	line-height: 2.5em;
 	text-align: center;
 	font-family: FontAwesome;
-	font-size: 0.9em;
-	color: rgb(109, 152, 216);/*放大镜查找按钮的颜色 */
+	font-size: 0.87em;
+	color: #1abc9c;
 }
 
 .uk-search-field::-moz-focus-inner
@@ -387,17 +382,15 @@ footer a:hover
 	opacity: 1;
 }
 
-.uk-search-field/*search in blog 查找框*/
+.uk-search-field
 {
 	font-family: "Open Sans",sans-serif;
-	font-size: 1em;
-	color: #abbccc;
+	color: #ecf0f1;
 	-webkit-appearance: none;
 	width: 11.25em;
 	height: 1.87em;
 	padding: 0 0 0 1.87em;
 	border: 0;
-	margin-top: -0.1em;
 	background: rgba(0,0,0,0);
 	-webkit-transition: all linear .2s;
 	transition: all linear .2s;
@@ -454,7 +447,7 @@ footer a:hover
 .gs-title
 {
 	font-family: "Open Sans",sans-serif!important;
-	color: #ca493b!important;
+	color: #e74c3c!important;
 	text-decoration: none!important;
 	height: inherit!important;
 	overflow: inherit!important;
@@ -486,7 +479,7 @@ footer a:hover
 	header
 	{
 		border-right: 0;
-		border-bottom: .8px #bdc3c7 solid;
+		border-bottom: 1px #bdc3c7 solid;
 		position: relative;
 		height: auto;
 		width: auto;
