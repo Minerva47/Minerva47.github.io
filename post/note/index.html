@@ -1,0 +1,1005 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        
+            
+                <title>摸鱼笔记</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.81.0" />
+        
+
+
+        
+        
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="摸鱼笔记"/>
+<meta name="twitter:description" content="git gitee：
+ git add . git commit -m &quot;备注内容&quot; git push origin 删除远程仓库
+git rm -r --cached .DS_Store git commit -m &quot;删除.DS_Store&quot; git push 用-r参数删除目录, git rm &ndash;cached .DS_Store 删除的是本地仓库中的文件，且本地工作区的文件会保留且不再与远程仓库发生跟踪关系，如果本地仓库中的文件也要删除则用git rm .DS_Store
+git pull -rebase 这个命令做了以下内容： a.把你 commit 到本地仓库的内容，取出来放到暂存区(stash)（这时你的工作区是干净的） b.然后从远端拉取代码到本地，由于工作区是干净的，所以不会有冲突 c.从暂存区把你之前提交的内容取出来，跟拉下来的代码合并
+所以 rebase 在拉代码前要确保你本地工作区是干净的，如果你本地修改的内容没完全 commit 或者 stash，就会 rebase 失败。
+删除文件后需要 git add -A, 光 git add. 不行
+git add -A 保存所有的修改 git add . 保存新的添加和修改，但是不包括删除 git add -u 保存修改和删除，但是不包括新建文件。"/>
+
+        <meta property="og:title" content="摸鱼笔记" />
+<meta property="og:description" content="git gitee：
+ git add . git commit -m &quot;备注内容&quot; git push origin 删除远程仓库
+git rm -r --cached .DS_Store git commit -m &quot;删除.DS_Store&quot; git push 用-r参数删除目录, git rm &ndash;cached .DS_Store 删除的是本地仓库中的文件，且本地工作区的文件会保留且不再与远程仓库发生跟踪关系，如果本地仓库中的文件也要删除则用git rm .DS_Store
+git pull -rebase 这个命令做了以下内容： a.把你 commit 到本地仓库的内容，取出来放到暂存区(stash)（这时你的工作区是干净的） b.然后从远端拉取代码到本地，由于工作区是干净的，所以不会有冲突 c.从暂存区把你之前提交的内容取出来，跟拉下来的代码合并
+所以 rebase 在拉代码前要确保你本地工作区是干净的，如果你本地修改的内容没完全 commit 或者 stash，就会 rebase 失败。
+删除文件后需要 git add -A, 光 git add. 不行
+git add -A 保存所有的修改 git add . 保存新的添加和修改，但是不包括删除 git add -u 保存修改和删除，但是不包括新建文件。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://minerva47.github.io/post/note/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-03-21T17:09:23&#43;08:00" />
+<meta property="article:modified_time" content="2021-03-21T17:09:23&#43;08:00" />
+
+
+        <meta itemprop="name" content="摸鱼笔记">
+<meta itemprop="description" content="git gitee：
+ git add . git commit -m &quot;备注内容&quot; git push origin 删除远程仓库
+git rm -r --cached .DS_Store git commit -m &quot;删除.DS_Store&quot; git push 用-r参数删除目录, git rm &ndash;cached .DS_Store 删除的是本地仓库中的文件，且本地工作区的文件会保留且不再与远程仓库发生跟踪关系，如果本地仓库中的文件也要删除则用git rm .DS_Store
+git pull -rebase 这个命令做了以下内容： a.把你 commit 到本地仓库的内容，取出来放到暂存区(stash)（这时你的工作区是干净的） b.然后从远端拉取代码到本地，由于工作区是干净的，所以不会有冲突 c.从暂存区把你之前提交的内容取出来，跟拉下来的代码合并
+所以 rebase 在拉代码前要确保你本地工作区是干净的，如果你本地修改的内容没完全 commit 或者 stash，就会 rebase 失败。
+删除文件后需要 git add -A, 光 git add. 不行
+git add -A 保存所有的修改 git add . 保存新的添加和修改，但是不包括删除 git add -u 保存修改和删除，但是不包括新建文件。"><meta itemprop="datePublished" content="2021-03-21T17:09:23&#43;08:00" />
+<meta itemprop="dateModified" content="2021-03-21T17:09:23&#43;08:00" />
+<meta itemprop="wordCount" content="364">
+<meta itemprop="keywords" content="" />
+        
+
+        
+
+        
+        
+            
+        
+
+        
+
+        
+
+        
+        
+        
+            
+        
+    </head>
+    <body>
+
+    <style>
+*
+{
+	padding: 0;
+	margin: 0;
+}
+
+body,html
+{
+	font-size: 1em;
+	line-height: 1.6em;
+    font-family:"Open Sans",sans-serif;
+    font-weight:300;color:rgb(21, 25, 29)
+	background-color: #ecf0f1;
+}
+
+html
+{
+	height: 100%;
+}
+
+body
+{
+	padding: 2em 2.5em 1em 20em;
+}
+
+header
+{
+	border-right:1px rgb(212, 216, 226) solid;
+	padding: 2em; 
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 13.5em;
+	background-color: #314961; 
+	color: #abbccc; 
+}
+
+#content
+{
+	display: block;
+	width: 100%;
+}
+
+footer
+{
+	padding: 0 0 0.5em;
+	font-size: .9em;
+	line-height: 2em;
+	color: #314961; 
+}
+
+article
+{
+	border-bottom: .1em #abbccc solid; 
+	padding-bottom: .8em; 
+	max-width: 56em;
+}
+
+h4,h5,h6,hr,p
+{
+	margin-top: .8em;
+	margin-bottom: .8em; 
+}
+
+h1,h2,h3,h4,h5,h6
+{
+	font-family:"Bree Serif",serif;
+    font-weight:550!important
+}
+
+h1
+{
+	font-size: 3em; 
+	line-height: 1.5em;
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+h2
+{
+	font-size: 2em;
+	line-height: 1.2em;
+	margin-top: 1.3em;
+	margin-bottom: 1.3em;
+}
+
+h3 
+{
+	font-size: 1.5em;
+	line-height: 1.2em;
+	margin-top: .8em;
+	margin-bottom: .8em;
+}
+
+h4
+{
+	font-size: 1.3em;
+}
+
+h5
+{
+	font-size: 1.2em;
+}
+
+h6
+{
+	margin-top: .8em;
+	margin-bottom: .8em;
+	font-size: 1.4em; 
+}
+
+iframe,img
+{
+	max-width: 100%;
+}
+
+a
+{
+	font-weight: 00;
+	text-decoration: none;
+	font-size: 1.2em;
+	color: #2f5b8d;
+}
+
+a:hover
+{
+	text-decoration: underline;
+}
+
+h1 a,h2 a,h3 a,h4 a,h5 a,h6 a
+{
+	font-weight: 600;
+}
+
+strong
+{
+	font-weight: 700;
+}
+
+blockquote
+{
+	border-left: .4em solid #ec0eaa;
+	padding-left: 1.2em;
+	font-size: 1.3em;
+}
+
+hr
+{
+	border: 0;
+	height: 1px;
+	background: #abbccc;
+}
+
+ol,ul 
+{
+	margin-left: 2.5em;
+}
+
+code 
+{
+	font-size: 1.4em;
+	font-weight: 100;
+	flex-wrap: wrap-reverse;
+	background: #f1f1f1;
+}
+
+pre
+{
+	font-size: .9em;
+	line-height: 1.5em;
+	background: #c2c4d3; 
+	padding: -.1em;
+	word-break: break-all;
+	word-wrap: break-word;
+	white-space: pre;
+	white-space: -moz-pre-wrap;
+	white-space: pre-wrap;
+}
+
+input
+{
+	font-size: .1em;
+	padding: .3em;
+}
+
+header h1
+{
+	font-size: 2.5em;
+	margin-top: .5em;
+	margin-bottom: .6em;
+}
+
+header a
+{
+	color: #abbccc;
+}
+
+header h1 a:hover
+{
+	text-decoration: none;
+}
+
+header #logo img
+{
+	width: 9em;
+	height: 9em;
+	border-radius: 4.5em;
+	-moz-border-radius: 4.5em;
+	-webkit-border-radius: 4.5em;
+	border: 0;
+}
+
+#follow-icons
+{
+	font-size: .7em; 
+	margin-top: -.7em;
+	margin-bottom: 1.5em;
+}
+
+#follow-icons a
+{
+	color: rgb(204, 204, 204);
+	margin-right: .5em; 
+}
+
+#follow-icons span
+{
+	vertical-align: top;
+	margin-left: -.15em;
+	margin-right: -.15em;
+}
+
+#follow-icons span .fa-stack-1x
+{
+	font-size: 1.05em;
+	line-height: 1.9em;
+}
+
+header h6
+{
+	margin-top: .5em; 
+}
+
+article span.post-stamp
+{
+	color: rgb(136, 136, 136);
+}
+
+h1.post-title
+{
+	margin-top: .35em;
+	margin-bottom: .6em;
+}
+
+h3.post-title 
+{
+	margin-top: -.4em;
+	padding-bottom: .5em;
+	border-bottom: 1px solid #abbccc;
+	font-size: 1.5em;
+	color: #3883cf; 
+	font-family: "Open Sans",sans-serif;
+	"Open Sans"-weight: 700!important;
+}
+
+.sitetaglist 
+{
+	list-style-type: none;
+	display: block;
+	margin-left: 0;
+	text-align: center;
+	margin-bottom: 1.25em;
+	font-size: 0.8em;
+}
+
+.sitetaglist li
+{
+	display: inline;
+}
+
+.sitetaglisttitle
+{
+	margin-bottom: .3em;
+}
+
+h3.post-title>time
+{
+	font-family: "Open Sans",sans-serif;
+	font-weight: 400!important; 
+	font-size: 1em;
+}
+
+.post-title .feature-star
+{
+	font-size: .9em;
+}
+
+.feature-star,.separator
+{
+	color: #ccc;
+}
+
+.taglist { color: #ccc }
+
+.taglist a {
+    background-color: rgb(23, 172, 9);
+    color: rgb(38, 172, 78);
+    display: inline-block;
+    line-height: 1.5em;
+    padding: .3em .6em;
+    vertical-align: 20%;
+    font-size: .5em;
+    font-weight: 00!important;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    border-radius: .25em;
+    -moz-border-radius: .25em;
+    -webkit-border-radius: .25em;
+}
+
+#social-bar
+{
+	margin-top: 1.5em;
+	background-color: #bdc3c7;
+	padding: .5em;
+}
+
+.pagination
+{
+	margin-bottom: 1em;
+}
+
+footer a
+{
+	font-weight: 300;
+	color: #387392; 
+	text-decoration: underline;
+}
+
+footer a:hover
+{
+	color: #95a0a6;
+	text-decoration: none;
+}
+
+.uk-search
+{
+	display: inline-block;
+	position: relative;
+	margin: 0;
+}
+
+.uk-search:before
+{
+	content: "\f002";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1.8em;
+	line-height: 1.87em;
+	text-align: center;
+	font-family: FontAwesome;
+	font-size: 0.9em;
+	color: rgb(109, 152, 216); 
+}
+
+.uk-search-field::-moz-focus-inner
+{
+	border: 0;
+	padding: 0;
+}
+
+.uk-search-field::-webkit-search-cancel-button,.uk-search-field::-webkit-search-decoration
+{
+	-webkit-appearance: none;
+}
+
+.uk-search-field::-ms-clear
+{
+	display: none;
+}
+
+.uk-search-field::-moz-placeholder
+{
+	opacity: 1;
+}
+
+.uk-search-field 
+{
+	font-family: "Open Sans",sans-serif;
+	font-size: 1em;
+	color: #abbccc;
+	-webkit-appearance: none;
+	width: 11.25em;
+	height: 1.87em;
+	padding: 0 0 0 1.87em;
+	border: 0;
+	margin-top: -0.1em;
+	background: rgba(0,0,0,0);
+	-webkit-transition: all linear .2s;
+	transition: all linear .2s;
+	vertical-align: middle;
+}
+
+.uk-search-field:-ms-input-placeholder
+{
+	color: #95a5a6!important;
+}
+
+.uk-search-field::-moz-placeholder
+{
+	color: #95a5a6;
+}
+
+.uk-search-field::-webkit-input-placeholder
+{
+	color: #95a5a6;
+}
+
+.uk-search-field:focus
+{
+	outline: 0;
+}
+
+.uk-search-field:focus,.uk-search.uk-active .uk-search-field
+{
+	width: 11.25em;
+}
+
+.gs-image-box,.gsc-above-wrapper-area,.gsc-cursor-box,.gsc-url-bottom,.gsc-thumbnail,.gs-per-result-labels
+{
+	display: none!important;
+	visibility: hidden!important;
+}
+
+.gsc-control-cse,.gsc-results
+{
+	font: inherit!important;
+	background: inherit!important;
+	border: inherit!important;
+	padding: inherit!important;
+	margin: inherit!important;
+}
+
+.gsc-result
+{
+	border: inherit!important;
+	background: inherit!important;
+	padding: inherit!important;
+}
+
+.gs-title
+{
+	font-family: "Open Sans",sans-serif!important;
+	color: #ca493b!important;
+	text-decoration: none!important;
+	height: inherit!important;
+	overflow: inherit!important;
+}
+
+.gs-snippet
+{
+	color: inherit!important;
+	font-family: "Open Sans",sans-serif!important;
+	height: inherit!important;
+	overflow: inherit!important;
+}
+
+@media only screen and (min-width:1281px)
+{
+	body,html
+	{
+		font-size: 1.1em;
+	};
+}
+
+@media only screen and (max-width:800px)
+{
+	body
+	{
+		padding: 0;
+	}
+
+	header
+	{
+		border-right: 0;
+		border-bottom: .8px #bdc3c7 solid;
+		position: relative;
+		height: auto;
+		width: auto;
+		text-align: center;
+		padding-bottom: 1em;
+	}
+
+	#content
+	{
+		margin-left: 0;
+		padding: 2em 2em 1em;
+		width: auto;
+	}
+
+	footer
+	{
+		padding: 0 2.5em 2em;
+	};
+}
+
+@media only screen and (max-width:31.25em)
+{
+	#content,header
+	{
+		padding: 1.2em 1.2em .6em;
+	}
+
+	footer
+	{
+		padding: 0 1.5em 1.2em;
+	}
+
+	ol,ul
+	{
+		margin-left: 2em;
+	};
+}
+
+.section
+{
+	clear: both;
+	padding: 0;
+	margin: 0;
+}
+
+.col
+{
+	display: block;
+	float: left;
+	margin: 1% 0 1% 1.6%;
+}
+
+.col:first-child
+{
+	margin-left: 0;
+}
+
+.group:before,.group:after
+{
+	content: "";
+	display: table;
+}
+
+.group:after
+{
+	clear: both;
+}
+
+.group
+{
+	zoom: 1;
+}
+
+.span_3_of_3
+{
+	width: 100%;
+}
+
+.span_2_of_3
+{
+	width: 66.13%;
+}
+
+.span_1_of_3
+{
+	width: 32.26%;
+}
+
+@media only screen and (max-width: 480px)
+{
+	.col
+	{
+		margin: 1% 0;
+	}
+
+	.span_3_of_3,.span_2_of_3,.span_1_of_3
+	{
+		width: 100%;
+	};
+}
+
+@media only screen and (max-height: 550px)
+{
+	.sitetaglist, .sitetaglisttitle
+	{
+		display: none;
+		visibility: hidden;
+	}
+}
+
+.portfoliobox
+{
+	text-align: center;
+	margin-bottom: 1em;
+}
+
+.portfoliobox img
+{
+	max-height: 10em;
+}
+
+.portfoliobox h4
+{
+	margin-top: 0;
+}
+
+.portfolio-meta
+{
+	margin-bottom: .5em;
+}
+
+.portfolio-meta > *
+{
+	display: block;
+}
+
+.portfolio-tag
+{
+	font-weight: 600;
+}
+</style>
+    
+    </head>
+        <header id="header">
+                                         
+            
+            <h1><a href="https://minerva47.github.io/">My Blog</a></h1>
+            <p></p>
+
+            
+            <div id="follow-icons">
+    <a href="https://github.com/Minerva47" rel="me"><i class="fa fa-github-square fa-2x" style="color:rgb(109, 152, 216)" style="font-size: 13px;"></i></a>
+    <a href="mailto:047lovelife@gmail.com" title="Gmail"><i class="fa fa-envelope-o fa-2x" style="color:rgb(109,152,216)" style="font-size: 13px;"></i></a>
+</div>  
+            
+ 
+		</font>
+	  </ul>
+</nav>
+
+
+ 
+
+            
+<h6 class="sitetaglisttitle">Respective efforts,</h6>
+<h6 class="sitetaglisttitle">peak bye.</h6>
+<ul class="sitetaglist">
+    
+</ul>
+
+            <form class="uk-search" action="https://minerva47.github.io/search/">
+    <input class="uk-search-field" id="q" name="q" type="search" placeholder=" search in blog" />
+</form>
+
+            
+
+            
+           
+    
+        </header>
+<main id="content">
+
+<article id="" class="post">
+    <div class="post-stamp">
+        <time datetime="2021-03-21T17:09:23&#43;08:00">
+            21 Mar 2021
+        </time>
+        <span class="taglist">
+        
+        </span>
+        
+            
+    </div>
+    
+    <h1 class="post-title">摸鱼笔记</h1>
+    <h2 id="git">git</h2>
+<p>gitee：</p>
+<pre><code> git add .
+ git commit -m &quot;备注内容&quot;
+ git push origin 
+</code></pre><p><strong>删除远程仓库</strong></p>
+<pre><code>git rm -r --cached .DS_Store
+git commit -m &quot;删除.DS_Store&quot; 
+git push
+</code></pre><p>用-r参数删除目录, git rm &ndash;cached .DS_Store 删除的是本地仓库中的文件，且本地工作区的文件会保留且不再与远程仓库发生跟踪关系，如果本地仓库中的文件也要删除则用git rm .DS_Store</p>
+<p><img src="https://img-blog.csdnimg.cn/20190604193324344.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JlbmJlbl8yMDE1,size_16,color_FFFFFF,t_70" alt=""></p>
+<h3 id="git-pull--rebase">git pull -rebase</h3>
+<p><!-- raw HTML omitted --></p>
+<p>这个命令做了以下内容：
+a.把你 commit 到本地仓库的内容，取出来放到暂存区(stash)（这时你的工作区是干净的）
+b.然后从远端拉取代码到本地，由于工作区是干净的，所以不会有冲突
+c.从暂存区把你之前提交的内容取出来，跟拉下来的代码合并</p>
+<p>所以 rebase 在拉代码前要确保你本地工作区是干净的，如果你本地修改的内容没完全 commit 或者 stash，就会 rebase 失败。</p>
+<p><strong>删除文件后需要 git add -A, 光 git add. 不行</strong></p>
+<p>git add -A 保存所有的修改
+git add . 保存新的添加和修改，但是不包括删除
+git add -u 保存修改和删除，但是不包括新建文件。</p>
+<h3 id="git-stash">git stash</h3>
+<pre><code>git stash 
+
+git stash apply
+</code></pre><p>使用<code>git stash</code>就可以将你当前未提交到本地（和服务器）的代码推入到Git的栈中，这时候你的工作区间和上一次提交的内容是完全一样的，所以你可以放心的修Bug，等到修完Bug，提交到服务器上后，再使用<code>git stash apply</code>将以前一半的工作应用回来。</p>
+<p>　git stash命令主要用于以下情形：</p>
+<ul>
+<li>发现有一个类是多余的，想删掉它又担心以后需要查看它的代码，想保存它但又不想增加一个脏的提交。这时就可以考虑<code>git stash</code>。</li>
+<li>使用git的时候，我们往往使用分支（branch）解决任务切换问题，例如，我们往往会建一个自己的分支去修改和调试代码, 如果别人或者自己发现原有的分支上有个不得不修改的bug，我们往往会把完成一半的代码<code>commit</code>提交到本地仓库，然后切换分支去修改bug，改好之后再切换回来。这样的话往往log上会有大量不必要的记录。其实如果我们不想提交完成一半或者不完善的代码，但是却不得不去修改一个紧急Bug，那么使用<code>git stash</code>就可以将你当前未提交到本地（和服务器）的代码推入到Git的栈中，这时候你的工作区间和上一次提交的内容是完全一样的，所以你可以放心的修Bug，等到修完Bug，提交到服务器上后，再使用<code>git stash apply</code>将以前一半的工作应用回来。</li>
+<li>经常有这样的事情发生，当你正在进行项目中某一部分的工作，里面的东西处于一个比较杂乱的状态，而你想转到其他分支上进行一些工作。问题是，你不想提交进行了一半的工作，否则以后你无法回到这个工作点。解决这个问题的办法就是<code>git stash</code>命令。储藏(stash)可以获取你工作目录的中间状态——也就是你修改过的被追踪的文件和暂存的变更——并将它保存到一个未完结变更的堆栈中，随时可以重新应用。</li>
+</ul>
+<h3 id="go-交叉编译cross-compilation">Go 交叉编译（cross-compilation）</h3>
+<p>macos输出linux/windows二进制文件：</p>
+<pre><code>CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build main.go
+CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build main.go
+</code></pre><p>Linux下编译Mac, Windows平台的64位可执行程序</p>
+<pre><code>CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build main.go
+CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build mian.go
+</code></pre><p>Windows下编译Mac, Linux平台的64位可执行程序：</p>
+<pre><code>SET CGO_ENABLED=0
+SET GOOS=darwin
+SET GOARCH=amd64
+go build main.go
+
+SET CGO_ENABLED=0
+SET GOOS=linux
+SET GOARCH=amd64
+go build main.go
+</code></pre><p>GOOS：目标可执行程序运行操作系统，支持 darwin，freebsd，linux，windows
+GOARCH：目标可执行程序操作系统构架，包括 386，amd64，arm</p>
+<p>Golang version 1.5以前版本在首次交叉编译时还需要配置交叉编译环境：</p>
+<pre><code>CGO_ENABLED=0 GOOS=linux GOARCH=amd64 ./make.bash
+CGO_ENABLED=0 GOOS=windows GOARCH=amd64 ./make.bash
+</code></pre><h3 id="寻找mac中的隐藏其他灰色文件缓存or大视频">寻找Mac中的隐藏其他灰色文件（缓存or大视频）</h3>
+<p>1,打开终端，</p>
+<pre><code>du -sh *
+</code></pre><p>2,快速定位到最大占比的文件：Library</p>
+<pre><code>du -d 1 -h
+</code></pre><p>3,查看占比依次查看</p>
+<pre><code>open xxx
+rm -rf xxx
+</code></pre><p>4,该删的删</p>
+<p>/Users/d47/Library/ScreenRecordings 里面经常有奇怪的自动摄影视频</p>
+<p><strong>在图形界面显示隐藏文件</strong>：</p>
+<pre><code>defaults write com.apple.finder AppleShowAllFiles -bool true
+
+killall Finder
+</code></pre><p><strong>恢复文件的隐藏状态</strong></p>
+<pre><code>defaults write com.apple.finder AppleShowAllFiles -bool false
+
+killall Finder
+</code></pre><h2 id="linux">Linux</h2>
+<p>没有权限</p>
+<pre><code>sudo chmod -R 777 某一目录 
+//-R 是指级联应用到目录里的所有子目录和文件 777 是所有用户都拥有最高权限
+</code></pre><p>top命令：</p>
+<p>PID：进程的ID　　</p>
+<p>USER：进程所有</p>
+<p>PR：进程的优先级别，越小越优先被执</p>
+<p>VIRT：进程占用的虚拟内</p>
+<p>RES：进程占用的物理内</p>
+<p>SHR：进程使用的共享内</p>
+<p>S：进程的状态,S表示休眠，R表示正在运行，Z表示僵死状态，N表示该进程优先值为负</p>
+<p>%CPU：进程占用CPU的使用</p>
+<p>%MEM：进程使用的物理内存和总内存的百分</p>
+<p>TIME+：该进程启动后占用的总的CPU时间，即占用CPU使用时间的累加值</p>
+<p>COMMAND：进程启动命令名称</p>
+<h3 id="配置ssh快捷链接">配置ssh快捷链接</h3>
+<pre><code>cd .ssh
+ssh-copy-id -i id_rsa.pub root@192.168.0.123 -p 23333
+ssh-add -K id_rsa
+</code></pre><h3 id="macos上解决rar问题the-unarchiver">macOS上解决rar问题：The Unarchiver</h3>
+<h3 id="mac交叉编译出错">mac交叉编译出错:</h3>
+<p><a href="https://blog.csdn.net/woaizijiheni/article/details/50614062">https://blog.csdn.net/woaizijiheni/article/details/50614062</a></p>
+<p>![image-20210305200711273](/Users/d47/Library/Application Support/typora-user-images/image-20210305200711273.png)</p>
+<h2 id="go">Go</h2>
+<pre><code>bolt &quot;go.etcd.io/bbolt&quot; 飘红
+</code></pre><p>引起以上的原因主要是etcd中使用的bbolt和grpc版本冲突引起</p>
+<p>解决办法：</p>
+<p>删除原来已生成得go.mod和go.sum</p>
+<pre><code>go mod init
+ 
+go mod edit -replace github.com/coreos/bbolt@v1.3.4=go.etcd.io/bbolt@v1.3.4
+ 
+go mod edit -replace google.golang.org/grpc@v1.29.1=google.golang.org/grpc@v1.26.0
+ 
+go mod tidy
+
+</code></pre><h3 id="hugo">hugo</h3>
+<pre><code>brew install hugo
+
+//设置好 GOPATH 环境变量，获取源码并编译：
+export GOPATH=$HOME/go
+go get -v github.com/spf13/hugo
+
+//更新所有Hugo的依赖库，增加 -u 参数
+go get -u -v github.com/spf13/hugo
+
+//使用Hugo快速生成站点，比如希望生成到/Users/d47/hugo 路径：
+sudo hugo new site /Users/d47/hugo
+</code></pre><p>![image-20210319214830710](/Users/d47/Library/Application Support/typora-user-images/image-20210319214830710.png)</p>
+<p>进入站点目录：</p>
+<p>![image-20210319214943690](/Users/d47/Library/Application Support/typora-user-images/image-20210319214943690.png)</p>
+<p>创建about页面</p>
+<pre><code>sudo hugo new about.md
+</code></pre><p>![image-20210319215201047](/Users/d47/Library/Application Support/typora-user-images/image-20210319215201047.png)</p>
+<p>![image-20210319215140921](/Users/d47/Library/Application Support/typora-user-images/image-20210319215140921.png)</p>
+<p>内容是 <code>Markdown</code> 格式的，<code>+++</code> 之间的内容是 <a href="https://github.com/toml-lang/toml">TOML</a> 格式的，根据你的喜好，你可以换成 <a href="http://www.yaml.org/">YAML</a> 格式（使用 <code>---</code> 标记）或者 <a href="http://www.json.org/">JSON</a> 格式。</p>
+<p>创建第一篇文章，放到 <code>post</code> 目录，方便之后生成聚合页面。</p>
+<pre><code>sudo hugo new post/first.md
+
+//打开编辑 post/first.md
+
+---
+date: &quot;2015-10-25T08:36:54-07:00&quot;
+title: &quot;first&quot;
+ 
+---
+
+### Hello Hugo
+
+ 1. aaa
+ 1. bbb
+ 1. ccc
+</code></pre><p>选皮肤（略）https://www.gohugo.org/theme/</p>
+<pre><code>git clone https://github.com/jchatkinson/HugoMDL.git
+</code></pre><p>运行Hugo</p>
+<pre><code>hugo server -D
+</code></pre><p>![image-20210319232116154](/Users/d47/Library/Application Support/typora-user-images/image-20210319232116154.png)</p>
+<p>|- archetypes ：存放default.md，头文件格式
+|- content ：content目录存放博客文章（markdown文件）
+|- data ：存放自定义模版，导入的toml文件（或json，yaml）
+|- layouts ：layouts目录存放的是网站的模板文件
+|- static ：static目录存放图片，css等静态资源
+|- config.toml ：config.toml是网站的配置文件</p>
+<p>参考：</p>
+<p><a href="https://www.gohugo.org">https://www.gohugo.org</a></p>
+
+    <HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="100%" color=#987cb9 SIZE=3>
+
+<section>
+<ul >
+    
+
+    
+       
+        <li>
+        <font size="4" color="2f5b8d"><b>next:</b></font>
+        <a href="https://minerva47.github.io/post/touchthefish/"
+                class="button big next">摸鱼日记</a></li>
+    
+</ul>
+</section>
+
+               
+
+    
+
+    
+    <div id="disqus_thread"></div>
+<script>
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+ 
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-79129383-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</article>
+
+</main>
+
+<footer id="footer">
+	<section id="footer-message">&copy;  <b>Minerva47's Blog</b> All rights reserved. Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>. <a href="https://github.com/kathyqian/crisp-ghost-theme" target="_blank">Crisp</a> theme by <a href="http://kathyqian.com" target="_blank">Kathy Qian</a>.</section>
+</footer>
+
+    <script>
+      (function(c,f){asyncLoader=function(i,h){i.foreach(function(k,j){e(j,d(j),h)});if(typeof h.callback=="function"){var g=setInterval(function(){if(f.readyState==="complete"){clearInterval(g);h.callback()}},10)}};var d=function(g){var h=g.split(".");return h[h.length-1]},e=function(h,i,g){switch(i){case"js":a(h,g);break;case"css":b(h);break;default:break}},a=function(i,h){var g=document.createElement("script");g.type="text/javascript";g.async=true;g.src=i;document.getElementsByTagName("head")[0].appendChild(g)},b=function(g){var h=document.createElement("link");h.type="text/css";h.rel="stylesheet";h.href=g;document.getElementsByTagName("head")[0].appendChild(h)};Array.prototype.foreach=function(h){for(var g=0;g<this.length;g++){h(g,this[g])}}})(this,document);
+
+      var WebFontConfig={google:{families:["Open Sans:300italic,700italic,300,700","Bree+Serif"]}};
+      asyncLoader([
+        "//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css",
+        "//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js",
+        "//cdnjs.cloudflare.com/ajax/libs/webfont/1.5.16/webfontloader.js",
+        "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"
+      ],{
+        callback:function(){
+          asyncLoader([
+            "https:\/\/minerva47.github.io\/css/rrssb.css",
+            "https:\/\/minerva47.github.io\/js/gist.min.js", 
+            "https:\/\/minerva47.github.io\/js/rrssb.min.js",
+            "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css"
+          ], { callback:function() {
+              hljs.initHighlighting();
+                
+          }});
+        }
+      });
+    </script>
+
+
+
+	
+	</body>
+</html>

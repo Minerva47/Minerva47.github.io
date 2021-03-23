@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on My Blog</title>
+    <link>https://minerva47.github.io/post/</link>
+    <description>Recent content in Posts on My Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 21 Mar 2021 18:34:27 +0800</lastBuildDate><atom:link href="https://minerva47.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Some Content</title>
+      <link>https://minerva47.github.io/post/some-content/</link>
+      <pubDate>Sun, 21 Mar 2021 18:34:27 +0800</pubDate>
+      
+      <guid>https://minerva47.github.io/post/some-content/</guid>
+      <description>Test content~
+hello ~ </description>
+    </item>
+    
+    <item>
+      <title>摸鱼日记</title>
+      <link>https://minerva47.github.io/post/touchthefish/</link>
+      <pubDate>Sun, 21 Mar 2021 17:09:23 +0800</pubDate>
+      
+      <guid>https://minerva47.github.io/post/touchthefish/</guid>
+      <description>正经人谁写摸鱼日记啊 干活日记 今天又什么事都没有干
+明天看论文写CV，拍证件照</description>
+    </item>
+    
+    <item>
+      <title>摸鱼笔记</title>
+      <link>https://minerva47.github.io/post/note/</link>
+      <pubDate>Sun, 21 Mar 2021 17:09:23 +0800</pubDate>
+      
+      <guid>https://minerva47.github.io/post/note/</guid>
+      <description>git gitee：
+ git add . git commit -m &amp;quot;备注内容&amp;quot; git push origin 删除远程仓库
+git rm -r --cached .DS_Store git commit -m &amp;quot;删除.DS_Store&amp;quot; git push 用-r参数删除目录, git rm &amp;ndash;cached .DS_Store 删除的是本地仓库中的文件，且本地工作区的文件会保留且不再与远程仓库发生跟踪关系，如果本地仓库中的文件也要删除则用git rm .DS_Store
+git pull -rebase 这个命令做了以下内容： a.把你 commit 到本地仓库的内容，取出来放到暂存区(stash)（这时你的工作区是干净的） b.然后从远端拉取代码到本地，由于工作区是干净的，所以不会有冲突 c.从暂存区把你之前提交的内容取出来，跟拉下来的代码合并
+所以 rebase 在拉代码前要确保你本地工作区是干净的，如果你本地修改的内容没完全 commit 或者 stash，就会 rebase 失败。
+删除文件后需要 git add -A, 光 git add. 不行
+git add -A 保存所有的修改 git add . 保存新的添加和修改，但是不包括删除 git add -u 保存修改和删除，但是不包括新建文件。</description>
+    </item>
+    
+  </channel>
+</rss>
